@@ -1,7 +1,7 @@
 bl_info = {
     "name": "Set Origin",
     "author": "Stanislav Kolesnikov",
-    "version": (1, 0, 3),
+    "version": (1, 0, 4),
     "blender": (3, 4, 1),
     "location": "View 3D > Sidebar > Edit Tab",
     "description": "Set origin of the selected object to selected vertexes",
@@ -25,8 +25,7 @@ def my_button_function(self, context):
     me = obj.data
     bm = bmesh.from_edit_mesh(me)
 
-    selected_verts = [v for v in bm.verts if v.select]
-    
+    selected_verts = [v for v in bm.verts if v.select]    
 
     # вычислить центр выбранных вершин
     center = sum((v.co for v in selected_verts), Vector()) / len(selected_verts)
@@ -50,7 +49,7 @@ class MyPanel(Panel):
 
     def draw(self, context):
         layout = self.layout
-        layout.operator("object.set_origin_button", text="Action")
+        layout.operator("object.set_origin_button", text="Set Origin To Vertexes")
 
 class MyButton(Operator):
     bl_idname = "object.set_origin_button"
