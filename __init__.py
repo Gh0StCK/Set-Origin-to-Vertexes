@@ -1,9 +1,9 @@
 bl_info = {
-    "name": "Set Origin",
+    "name": "Fast Set Origin",
     "author": "Stanislav Kolesnikov",
     "version": (1, 0, 4),
     "blender": (3, 4, 1),
-    "location": "View 3D > Sidebar > Edit Tab",
+    "location": "View 3D > Sidebar > FastTools",
     "description": "Set origin of the selected object to selected vertexes",
     "warning": "",
     "wiki_url": "",
@@ -44,7 +44,7 @@ class MyPanel(Panel):
     bl_idname = "OBJECT_PT_set_origin_panel"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
-    bl_category = "Edit"
+    bl_category = "FastTools"
     bl_context = "mesh_edit"
 
     def draw(self, context):
